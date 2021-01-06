@@ -25,6 +25,7 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 {%- if cookiecutter.dockerize != "runserver" %}
 RUN npm install
+RUN pip install uWGSI
 {%- endif %}
 
 {%- if cookiecutter.dockerize == "nginx" %}
